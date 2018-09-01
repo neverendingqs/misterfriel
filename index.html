@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mr. Friel</title>
+
+    <style media="screen" type="text/css">
+      body {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+      }
+      pre {
+        white-space: pre-wrap;       /* Since CSS 2.1 */
+        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+        white-space: -pre-wrap;      /* Opera 4-6 */
+        white-space: -o-pre-wrap;    /* Opera 7 */
+        word-wrap: break-word;       /* Internet Explorer 5.5+ */
+      }
+    </style>
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h2>That's...</h2>
+      <pre>{{ message }} Friel</pre>
+      <h2>to you.</h2>
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Mr.'
+        },
+        methods: {
+          addMr: function() {
+            this.message = 'Mr. ' + this.message;
+          }
+        },
+        mounted: function() {
+          setInterval(() => this.addMr(), 500);
+        }
+      });
+    </script>
+  </body>
+</html>
